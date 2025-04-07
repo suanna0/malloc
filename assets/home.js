@@ -124,7 +124,7 @@ function mousePressed() {
 function mouseReleased() {
   let w = width - 2 * margin + gutter;
   var colSize = w / 8;
-  var href = "https://malloclab.com/pages/welcome.html";
+  var href = "https://www.malloclab.com/pages/welcome.html";
   if (
     colSize * 6 <= mouseX &&
     mouseX <= colSize * 8 &&
