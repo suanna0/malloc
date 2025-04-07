@@ -69,13 +69,13 @@
   
               <p>
                 🚧Under Construction🚧<br /><br />
-                <b>Removing Footers:</b><br /><br />
+                <b>Removing Footers:</b><br />
                 This reduces internal fragmentation. Since our blocks are 
                 16-byte aligned, we have 3 zeroed bits→ one is for allocation. 
                 We can use one of the bits to record if there’s a footer. Now, 
                 we have more payload.
                 <br /><br />
-                <b>Mini-blocks:</b><br /><br />
+                <b>Mini-blocks:</b><br />
                 Creating a new size class, singly-linked list.<br /><br />
                 16 byte aligned->16<br /><br />
                 32 bytes because of all of these fields that take up space->
@@ -88,8 +88,8 @@
                 all blocks are the same size
                 <br /><br />
                 use least significant bits in the header
-
-                <b>Summary:</b>
+                <br /><br />
+                <b>Summary:</b><br />
                 Making use of 16-byte alignment, we can use the first bit
                 to record information about the previous block, the second
                 bit to indicate if the current block is a mini block, and the
