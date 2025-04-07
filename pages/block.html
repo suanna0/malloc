@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Block | Malloc Visualizer</title>
+
+    <link rel="stylesheet" href="https://use.typekit.net/scm7lei.css" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="navigation">
+          <h1 class="title">
+            <a href="https://malloclab.com/">Malloc Visualizer</a>
+          </h1>
+          <button>
+            <a href="../pages/block.html">Block</a>
+          </button>
+          <br />
+          <button>
+            <a href="../pages/fragmentation.html">Fragmentation</a>
+          </button>
+          <br />
+          <button>
+            <a href="/pages/implicit.html">Implicit List</a>
+          </button>
+          <br />
+          <button>
+            <a href="../pages/functions.html">Function Walkthrough</a>
+          </button>
+          <br />
+          <button>
+            <a href="/pages/explicit.html">Explicit List</a>
+          </button>
+          <br />
+          <button><a href="../pages/seg.html">Segregated List</a></button>
+          <br />
+          <button><a href="../pages/final.html">Final</a></button>
+          <br />
+          <br /><br />
+
+          <p>
+            Made by
+            <u
+              ><a target="_blank" href="https://suannazhong.com/"
+                >Suanna Zhong</a
+              ></u
+            >, 2025.
+          </p>
+        </div>
+
+        <div class="body">
+          <div class="content">
+            <h1 class="title">Block</h1>
+            <div class="image-wrapper">
+              <img
+                src="https://cdn.glitch.global/66e497d9-d0f8-4357-b2ae-33c3e94f0744/malloc_block.gif?v=1743860292588"
+                alt="Malloc block diagram"
+              />
+            </div>
+
+            <p>
+              Let’s first go over what a block looks like. A block has a
+              one-word header (8 bytes) at the beginning, a payload, and extra
+              padding to fit alignment requirements. Typically, blocks are
+              aligned by 8 or 16 bytes to work well with the computer’s
+              hardware. We’ll be using 16 byte alignment.
+              <br /><br />
+              In the block’s header, we store information about the size and
+              allocation status. For now, we can imagine that the header stores
+              the size of the block. <br /><br />When blocks are fixed to the
+              16-byte alignment requirement, the three lowest-order address bits
+              will always be 0. We can use this space to store a bit that marks
+              the block’s allocation status. A mask can help us get the
+              allocation status of our block.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

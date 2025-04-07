@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>Fragmentation | Malloc Visualizer</title>
+
+    <link rel="stylesheet" href="https://use.typekit.net/scm7lei.css" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="navigation">
+          <h1 class="title">
+            <a href="https://malloclab.com/">Malloc Visualizer</a>
+          </h1>
+          <button>
+            <a href="../pages/block.html">Block</a>
+          </button>
+          <br />
+          <button>
+            <a href="../pages/fragmentation.html">Fragmentation</a>
+          </button>
+          <br />
+          <button>
+            <a href="/pages/implicit.html">Implicit List</a>
+          </button>
+          <br />
+          <button>
+            <a href="../pages/functions.html">Function Walkthrough</a>
+          </button>
+          <br />
+          <button>
+            <a href="/pages/explicit.html">Explicit List</a>
+          </button>
+          <br />
+          <button><a href="../pages/seg.html">Segregated List</a></button>
+          <br />
+          <button><a href="../pages/final.html">Final</a></button>
+          <br />
+          <br /><br />
+
+          <p>
+            Made by
+            <u
+              ><a target="_blank" href="https://suannazhong.com/"
+                >Suanna Zhong</a
+              ></u
+            >, 2025.
+          </p>
+        </div>
+
+        <div class="body">
+          <div class="content">
+            <h1 class="title">Fragmentation</h1>
+            <div class="image-wrapper">
+              <img src="a" alt="coming soon " />
+            </div>
+
+            <p>
+              Fragmentation occurs when unused memory is unable to be
+              allocated–this could be caused by alignment requirements, the
+              block’s minimum size, headers/footers taking up space, and much
+              more. There are two forms of fragmentation: internal fragmentation
+              and external fragmentation.
+              <br /><br />
+              Internal fragmentation is when the size of the allocated block is
+              larger than the payload it holds. This may happen if the
+              implementation has a minimum size on allocated blocks that is
+              greater than the size of the payload.
+              <br /><br />
+              External fragmentation happens when the overall-sum of free memory
+              blocks across the heap is enough to allocate a block, but no
+              single, contiguous, free block is large enough to handle the
+              request.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
