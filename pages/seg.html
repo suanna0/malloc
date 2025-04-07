@@ -68,12 +68,26 @@
               </div>
   
               <p>
-                🚧Under Construction🚧<br /><br />
-                Changing from Explicit to Segregated was the ultimate test if my coalesce_block function was actually clean, mine had nasty if-statements at first. adding a second list forced me to clean up my code. 
+                Changing my implemention from an explicit list to a segregated 
+                lists was the ultimate test to see if my <code>coalesce_block</code>
+                function was actually clean. My original implementation was full
+                of nasty if-statements, but adding a second free list forced me 
+                to clean up my code.
                 <br /><br />
-For the size classes–powers of two should suffice. Another option is using instrumentation, using a counter to variable see which sizes are used the most frequently and updating the size classes accordingly. You are given 128 bytes of global variables, so use up all of them for your size classes.
-<br /><br />
-Modify find fit-max attempts, hindered utilization, but improved throughput drastically.
+                For this assignment, you are given 128 bytes of global variables,
+                so use up all of them for your size classes. The size classes 
+                should be organized by powers of two. I played with instrumentation to 
+                determine my classes, using a counter to variable see which 
+                sizes are used the most frequently and updating the size classes 
+                accordingly. 
+                <br /><br />
+                These changes helped, but my implementation was still unable
+                to meet the desired throughput metrics. This led me to modify 
+                my <code>find_fit</code> function. I set a variable, 
+                <code>max_attempts</code> so that a suitable block could be 
+                returned faster, even though it may not be the best fit.
+                Although this change hindered utilization, the throughput 
+                improved drastically.
               </p>
           </div>
         </div>
