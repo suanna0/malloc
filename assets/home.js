@@ -43,12 +43,13 @@ function setup() {
 }
 
 function draw() {
-  if (width < 1350) {
-    background(242, 58, 55);
+  background(255);
+
+  if (width < 1350) { // If the window is too small, show the "uh oh" image
     image(uh_oh, 0, 0);
     return;
   }
-  background(255);
+  
   drawTicks();
   for (let i = 0; i < entries.length; i++) {
     p = entries[i];
