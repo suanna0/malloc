@@ -24,12 +24,6 @@ var endRow;
 var totalMem;
 
 function setup() {
-  uh_oh = loadImage(
-    "https://cdn.glitch.global/66e497d9-d0f8-4357-b2ae-33c3e94f0744/uh_oh.png?v=1739474781010"
-  );
-  title = loadImage(
-    "https://cdn.glitch.global/66e497d9-d0f8-4357-b2ae-33c3e94f0744/landing.png?v=1743858303575"
-  );
   margin = 15;
   gutter = 15;
   cornerSize = 20;
@@ -46,7 +40,8 @@ function draw() {
   background(255);
 
   if (width < 1350) { // If the window is too small, show the "uh oh" image
-    image(uh_oh, 0, 0);
+    text("Uh oh! This application is not supported on small screens.", 20, 20);
+    text("Please resize your window or use a larger screen.", 20, 40);
     return;
   }
   
@@ -167,10 +162,6 @@ function drawTicks() {
       }
     }
   }
-}
-
-function drawTitle() {
-  image(title, 0, 0);
 }
 
 function drawTempBlock(c, s, e) {
