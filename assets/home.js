@@ -74,15 +74,15 @@ function drawTotalMemory() {
   );
 
   if (
-    colSize * 6 <= mouseX &&
-    mouseX <= colSize * 8 &&
+    colSize * (numCols - 1) <= mouseX &&
+    mouseX <= colSize * numCols &&
     height / 32 - 30 <= mouseY &&
     mouseY <= height / 32 - 10
   ) {
     textFont(helvetica_bold);
   }
 
-  text("Start Module", colSize * 6 + margin, height / 32 - 10);
+  text("Start Module", colSize * (numCols - 1) + margin, height / 32 - 10);
 
   textFont(helvetica_regular);
 }
@@ -128,8 +128,8 @@ function mouseReleased() {
   var colSize = w / numCol;
   var href = "https://www.malloclab.com/pages/welcome.html";
   if (
-    colSize * 6 <= mouseX &&
-    mouseX <= colSize * 8 &&
+    colSize * (numCols - 1) <= mouseX &&
+    mouseX <= colSize * numCols &&
     height / 32 - 30 <= mouseY &&
     mouseY <= height / 32
   ) {
