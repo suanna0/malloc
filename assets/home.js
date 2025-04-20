@@ -17,6 +17,7 @@ let gutter;
 let cornerSize;
 let title;
 
+var numCol;
 var curCol;
 var startRow;
 var endRow;
@@ -24,6 +25,11 @@ var endRow;
 var totalMem;
 
 function setup() {
+  if (windowWidth < 1000) { 
+    numCol = 6;
+  } else {
+    numCol = 8;
+  }
   margin = 15;
   gutter = 15;
   cornerSize = 20;
@@ -39,7 +45,7 @@ function setup() {
 function draw() {
   background(255);
 
-  if (width < 1350) { // If the window is too small, show the "uh oh" image
+  if (width < 800) { // If the window is too small, show the "uh oh" image
     text("Uh oh! This application is not supported on small screens.", 20, 20);
     text("Please resize your window or use a larger screen.", 20, 40);
     return;
@@ -58,7 +64,7 @@ function draw() {
 
 function drawTotalMemory() {
   let w = width - 2 * margin + gutter;
-  var colSize = w / 8;
+  var colSize = w / numCol;
   fill(33);
   noStroke();
   text(
@@ -83,8 +89,8 @@ function drawTotalMemory() {
 
 function getColumn() {
   let w = width - 2 * margin + gutter;
-  var colSize = w / 8;
-  for (var i = 0; i < 8; i++) {
+  var colSize = w / numCol;
+  for (var i = 0; i < numCol; i++) {
     if (
       colSize * i <= mouseX &&
       mouseX <= colSize * (i + 1) &&
@@ -119,7 +125,7 @@ function mousePressed() {
 
 function mouseReleased() {
   let w = width - 2 * margin + gutter;
-  var colSize = w / 8;
+  var colSize = w / numCol;
   var href = "https://www.malloclab.com/pages/welcome.html";
   if (
     colSize * 6 <= mouseX &&
@@ -143,8 +149,8 @@ function drawTicks() {
   var addr = 0;
   stroke(0, 0, 0, 30);
   let w = width - 2 * margin + gutter;
-  var colSize = w / 8;
-  for (var i = 0; i < 8; i++) {
+  var colSize = w / numCol;
+  for (var i = 0; i < numCol; i++) {
     for (var j = 0; j < 30; j++) {
       if (i == 0) {
         text(
@@ -168,7 +174,7 @@ function drawTempBlock(c, s, e) {
   blendMode(MULTIPLY);
   fill(241, 162, 69, 50);
   let w = width - 2 * margin + gutter;
-  var colSize = w / 8;
+  var colSize = w / numCol;
   rect(
     colSize * c + margin,
     height / 32 + s * 25,
@@ -192,7 +198,7 @@ class Entry {
     blendMode(MULTIPLY);
     fill(241, 162, 69, 150);
     let w = width - 2 * margin + gutter;
-    var colSize = w / 8;
+    var colSize = w / numCol;
     rect(
       colSize * this.c + margin,
       height / 32 + this.start * 25,
